@@ -23,11 +23,11 @@
       }; //setFlipped(!inverted); => 오류날 수 있음, 현재 값을 다른 값으로 바꿔줌 => 이럴 때는 current
       return (
         //여기부터 리렌더링 된다. 바뀐 부분만 리렌더링함
-        <div>
-          <div>
+        <div class="container0">
+          <div class="container">
             <label htmlFor="minutes">Minutes</label>
             <input
-              value={inverted ? amount * 60 : amount} //3. UI에 보여준다. 통제되는 event를 가지고 있고
+              value={inverted ? Math.round(amount * 60) : amount} //3. UI에 보여준다. 통제되는 event를 가지고 있고
               id="minutes"
               placeholder="Minutes"
               type="number"
@@ -36,10 +36,10 @@
             />
           </div>
 
-          <div>
+          <div class="container2">
             <label htmlFor="hours">Hours</label>
             <input //Math.round() : 반올림
-              value={inverted ? amount : amount / 60} //이제 state인 minutes를 값으로 리스닝하는 input이 두 개가 있다.
+              value={inverted ? amount : Math.round(amount / 60)} //이제 state인 minutes를 값으로 리스닝하는 input이 두 개가 있다.
               id="hours"
               placeholder="Hours"
               type="number"
@@ -47,8 +47,8 @@
               onChange={onChange}
             />
           </div>
-          <button onClick={reset}>Reset</button>
-          <button onClick={onFlip}>{inverted ? "Turn back" : "Invert"}</button>
+          <button class="reset" onClick={reset}>Reset</button>
+          <button class="onflip" onClick={onFlip}>{inverted ? "Turn back" : "Invert"}</button>
         </div>
       );
     }
@@ -68,7 +68,7 @@
           <div>
             <label htmlFor="km">Km</label>
             <input
-              value={inverted ? amount * 1.609 : amount}
+              value={inverted ? Math.round(amount * 1.609) : amount}
               id="km"
               placeholder="Km"
               type="number"
@@ -79,7 +79,7 @@
           <div>
             <label htmlFor="miles">Miles</label>
             <input
-              value={inverted ? amount : amount / 1.609}
+              value={inverted ? amount : Math.round(amount / 1.609)}
               id="miles"
               placeholder="Miles"
               type="number"
@@ -100,7 +100,7 @@
       console.log("render w/", index);
       return (
         //데이터가 함수에 의해 수정 되면 ReactJS가 UI를 새로고침해줌.
-        <div>
+        <div class="super-converter">
           <h1>Super Converter</h1>
           <select value={index} onChange={onSelect}>
             <option value="xx">Select your units</option>

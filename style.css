@@ -1,3 +1,9 @@
 body {
     background-color: rgb(185, 231, 98);
 }
+
+.container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

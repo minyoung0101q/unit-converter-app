@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import "rest.css";
+@import "variable.css";
+@import "components/statusbar.css";
+@import "screens/select-units.css";
+@import "screens/minutes-hours.css";
+@import "screens/km-miles.css";
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}

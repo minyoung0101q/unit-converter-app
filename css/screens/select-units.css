@@ -1,0 +1,15 @@
+.super-converter {
+  background: black;
+  opacity: 0.8;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select option {
+  background: rgb(146, 146, 146);
+  color: #fff;
+}
